@@ -1,5 +1,6 @@
 from typing import ClassVar
 from django.db import models
+from django.forms.fields import EmailField
 
 # Create your models here.
 
@@ -11,11 +12,20 @@ class Categoria(models.Model):
         return (self.nombreCategoria)
 
 class Producto(models.Model):
-    numeroSerie=models.CharField(max_length=20, primary_key=True,verbose_name='numeroSerie')
-    marca=models.CharField(max_length=20,verbose_name='Marca')
-    modelo=models.CharField(max_length=20,verbose_name='Modelo')
-    categoria=models.ForeignKey(Categoria,on_delete=models.CASCADE)
-    imagen = models.ImageField(upload_to='logos_id',null=True)
+    numeroID=        models.CharField(max_length=20, primary_key=True,verbose_name='numeroID',null=True)
+    nombreCompleto=  models.CharField(max_length=20,verbose_name='nombreCompleto',null=True)
+    telefono=        models.CharField(max_length=20,verbose_name='telefono',null=True)
+    categoria=       models.ForeignKey(Categoria,on_delete=models.CASCADE)
+    direccion=       models.CharField(max_length=30,verbose_name='direccion',null=True)
+    imagen =         models.ImageField(upload_to='logos_id',null=True)
+    email=           models.CharField(max_length=30,verbose_name='email',null=True)
+    pais=            models.CharField(max_length=20,verbose_name= 'pais',null=True)
+    contrasenna=      models.CharField(max_length=30,verbose_name= 'contrasenna',null=True,blank=True)
+    
+
+
+
+
 
     def __str__(self) :
-        return (self.numeroSerie)
+        return (self.numeroID)

@@ -70,32 +70,37 @@
 
     </nav>
     
-    <h1>Nuevos productos que llegaran al Valhalla</h1>
+    <h1>Nuevos usuarios </h1>
     <br><br>
-    <div id="caja">
-        <button type="button" id="enviar">Productos</button>
-    </div>
-    <br><br>
+   
 
     <div class="container-fluid row">
             <table class="table" id="categorias"><!--mostramos todos los productos almacenados en admin-->
                 <thead>
                     <tr>
-                        <th scope="col">Numero serie</th>
-                        <th scope="col">Marca</th>
-                        <th scope="col">Modelo</th>
+                        <th scope="col">Numero ID</th>
+                        <th scope="col">Nombre completo</th>
+                        <th scope="col">Telefono</th>
                         <th scope="col">Categoria</th>
+                        
                         <th scope="col">Imagen</th>
+                        
+                       
+                        
+
+
                     </tr>
                     {%for ve in datos %}
                         <tr>
-                            <th>{{ve.numeroSerie}} </th>
-                            <th>{{ve.marca}}</th>
-                            <th>{{ve.modelo}}</th>
+                            <th>{{ve.numeroID}} </th>
+                            <th>{{ve.nombreCompleto}}</th>
+                            <th>{{ve.telefono}}</th>
                             <th>{{ve.categoria}}</th>
                             
                             {%if ve.imagen%}
                             <th><img src="{{ve.imagen.url }}" width="50" height="50"></th>
+                            {%else%}
+                            <th>sin imagen </th>
                             {% endif %}
 
                             

@@ -32,7 +32,7 @@ def ver(request):
     return render(request,'ver.html',context={'productos':productos})
 
 def form_mod_producto(request,id):
-    producto=Producto.objects.get(numeroSerie=id)
+    producto=Producto.objects.get(numeroID=id)
     datos={
         'form':ProductoForm(instance=producto)
     }
@@ -43,7 +43,7 @@ def form_mod_producto(request,id):
             return redirect('ver')
     return render(request,'form_mod_producto.html',datos)
 def form_del_producto(request,id):
-    producto=Producto.objects.get(numeroSerie=id)
+    producto=Producto.objects.get(numeroID=id)
     producto.delete()
     return redirect('ver')
 

@@ -62,30 +62,49 @@
     </nav>
 
     <div class="container-fluid row">
-        <h1>Productos</h1>
+        <h1>Datos Proveedores</h1>
 
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Numero serie</th>
-                    <th scope="col">Marca</th>
-                    <th scope="col">Modelo</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">Imagen</th>
-                    <th scope="col">Opciones </th>
+                    <th scope="col">Numero de identificacion</th>
+                    <th scope="col">Nombre completo</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">categoria</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">imagen</th>
+                    <th scope="col">Email </th>
+                    <th scope="col">pais</th>
+                    <th scope="col">contraseña</th>
+                   
+                    <th scope="col">opciones</th>
                 </tr>
+                
 
             </thead>
             <tbody>
                 {%for ve in productos%}
                 <tr>
-                    <td>{{ve.numeroSerie}}</td>
-                    <td>{{ve.marca}}</td>
-                    <td>{{ve.modelo}}</td>
+                    <td>{{ve.numeroID}}</td>
+                    <td>{{ve.nombreCompleto}}</td>
+                    <td>{{ve.telefono}}</td>
                     <td>{{ve.categoria}}</td>
-                    <td><a href="{% url 'form_mod_producto' ve.numeroSerie%}">Modificar   </a></td>
-                    <td><a href="{% url 'form_del_producto' ve.numeroSerie%}">Eliminar</a></td>
+                    <td>{{ve.direccion}}</td>
+                      
+                    {%if ve.imagen%}
+                    <th><img src="{{ve.imagen.url }}" width="50" height="50"></th>
+                    {%else%}
+                    <th>sin imagen</th>
+                    {% endif %}
+                    <th>{{ve.email}}</th>
+                    <th>{{ve.pais}}</th>
+                    <th>{{ve.contrasenna}}</th>
+                    
 
+                    
+                    <td><a href="{% url 'form_mod_producto' ve.numeroID%}">Modificar</a></td>
+                    <td><a href="{% url 'form_del_producto' ve.numeroID%}">Eliminar</a></td>
+                
                 </tr>
                 {%endfor%}
             </tbody>

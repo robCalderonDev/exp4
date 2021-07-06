@@ -67,20 +67,20 @@
                     <div class="row">
                         {%csrf_token%}                        
                         <div class="col-6">
-                            {{producto_form.numeroSerie.label}}
+                            {{producto_form.numeroID.label}}
                         
-                            {{producto_form.numeroSerie}}
+                            {{producto_form.numeroID}}
                         </div>
                         <div class="col-6">
-                            {{producto_form.marca.label}}
+                            {{producto_form.nombreCompleto.label}}
                             
-                            {{producto_form.marca}}
+                            {{producto_form.nombreCompleto}}
                            
                         </div>
                         <div class="col-6 ">
-                            {{producto_form.modelo.label}}
+                            {{producto_form.telefono.label}}
                            
-                            {{producto_form.modelo}}
+                            {{producto_form.telefono}}
                             
                         </div>
                         <div class="form-group col-6 ">
@@ -91,13 +91,34 @@
                           
                            
                         </div>
+                        <div class="form-group col-6">
+                            {{producto_form.direccion.label}}
+                            {{producto_form.direccion}}
+                            
+                        </div>
                         <div class="form-group  col-6">
                             {{producto_form.imagen.label}}
-                            <br>
-                            
                             {{producto_form.imagen}}
+                            
+                            
                         </div>
                         <div class="form-group col-6">
+                            {{producto_form.email.label}}
+                            {{producto_form.email}}
+
+                        </div>
+                        <div class="form-group col-6">
+                            {{producto_form.pais.label}}
+                            {{producto_form.pais}}
+                        </div>
+                        <div class="form-group col-6">
+                            {{producto_form.contrasenna.label}}
+                            {{producto_form.contrasenna}}
+
+                        </div>
+                        <div class="form-group col-6">
+                            
+                        
                        
                             
                         <input type="submit" id="guardar" class="btn btn-info mt-2 " value="crear producto" >

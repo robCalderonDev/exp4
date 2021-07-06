@@ -6,42 +6,47 @@ from .models import Producto
 class ProductoForm(ModelForm):
     class Meta :
         model=Producto
-        fields=['numeroSerie','marca','modelo','categoria','imagen']
+        fields=['numeroID','nombreCompleto','telefono','categoria','direccion','imagen','email','pais','contrasenna']
         
         labels={
-            'numeroSerie':'ingrese numero serie',
-            'marca':'ingrese la marca',
-            'modelo':'ingrese modelo',
+            'numeroID':'ingrese ID',
+            'nombreCompleto':'Nombre Completo',
+            'telefono':'ingrese telefono',
             'categoria':'seleccione categoria',
-            'imagen':'ingrese logoproveedor'
+            'direccion':'ingrese direccion',
+            'imagen':'ingrese logoproveedor',
+            'email':'ingrese email',
+            'pais':'ingrese pais',
+            'contrasenna':'ingrese contraseña'
+
 
         }
         
         widgets={
-            'numeroSerie': forms.TextInput(
+            'numeroID': forms.TextInput(
                 attrs={
                     'class':'form-control',
-                    'placeholder':'numeroSerie',
-                    'id':'numeroSerie'
+                    'placeholder':'numeroID',
+                    'id':'numeroID'
 
 
                 }
             ),
-            'marca': forms.TextInput(
+            'nombreCompleto': forms.TextInput(
                 attrs={
                     'class':'form-control',
-                    'placeholder':'marca',
-                    'id':'marca'
+                    'placeholder':'nombreCompleto',
+                    'id':'nombreCompleto'
 
 
                 }
 
             ),
-            'modelo':forms.TextInput(
+            'telefono':forms.TextInput(
                 attrs={
                     'class':'form-control',
-                    'placeholder':'modelo',
-                    'id':'modelo'
+                    'placeholder':'telefono',
+                    'id':'telefono'
 
                 }
             ),
@@ -53,6 +58,39 @@ class ProductoForm(ModelForm):
                 }
 
             ),
+            'direccion':forms.TextInput(
+                attrs={
+                    'class':'form-control',
+                    'id':'direccion'
+                }
+
+            ),
+            'imagen':forms.FileInput(
+                attrs={
+                    'class':'form-control',
+                    'id':'imagen'
+                }
+            ),
+            'email':forms.TextInput(
+                attrs={
+                    'class':'form-control',
+                    'id':'email'
+                }
+            ),
+            'pais':forms.TextInput(
+                attrs={
+                    'class':'form-control',
+                    'id':'pais'
+                }
+            ),
+            'contrasenna':forms.PasswordInput(
+                attrs={
+                    'class':'form-control',
+                    'id':'contrasenna'
+                }
+
+            ),
+            
            
 
 
