@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>ValhallaGeek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css" >
+    <link rel="shortcut icon" href="{% static 'img/logo4.png' %}">
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar sticky-top">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'img/logo4.png' %}" width="50" height="50" alt="">
+        <a class="navbar-brand" href="{% url 'index' %}" id="barraUp">ValhallaGeek</a>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav mr-auto text-center">
+                <li class="nav-item active">
+                    <a class="nav-link " href="{% url 'tienda' %}" id="barraUp">Tienda </a>
+                </li>
+                
+
+
+            </ul>
+           
+            
+            <button id="bdark"><i class="bi bi-sun"></i></button>
+
+            <form class="form-inline d-flex flex-row "> 
+                <button type="submit" class="btn btn-info ml-5 boton-busqueda"  id="BtnU"><i class="bi bi-search" id="BtnU"></i></button>
+                
+                <input class="form-control   ml-0 busqueda " placeholder="Buscar" aria-label="search">
+                    
+                <button type="button  " class="btn  btn-info  m  " id="BtnU"><i class="bi bi-cart" id="BtnU"></i></button>
+
+
+             </form>
+            
+            
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </nav>
+
+    <div class="container-fluid row">
+        <h1>Productos</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Numero serie</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Opciones </th>
+                </tr>
+
+            </thead>
+            <tbody>
+                {%for ve in productos%}
+                <tr>
+                    <td>{{ve.numeroSerie}}</td>
+                    <td>{{ve.marca}}</td>
+                    <td>{{ve.modelo}}</td>
+                    <td>{{ve.categoria}}</td>
+                    <td><a href="{% url 'form_mod_producto' ve.numeroSerie%}">Modificar   </a></td>
+                    <td><a href="{% url 'form_del_producto' ve.numeroSerie%}">Eliminar</a></td>
+
+                </tr>
+                {%endfor%}
+            </tbody>
+
+
+        </table>
+    </div>
+
+
+
+    <script>
+        const bdark = document.querySelector('#bdark');
+        const body = document.querySelector('body');
+        bdark.addEventListener('click', e =>{
+          body.classList.toggle('darkmode');
+        });
+      </script>
+</body>
+</html>
