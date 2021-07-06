@@ -63,7 +63,7 @@
     <div class="container sd mb-5">
         <h3 class="h1row">Registr de proveedor</h3>
 
-                <form  id="form_producto" method="POST" action="#" name="form_producto" enctype="multipart/form-data">
+                <form  id="form_producto" method="POST" action="#" class="" name="form_producto" enctype="multipart/form-data">
                     <div class="row">
                         {%csrf_token%}                        
                         <div class="col-6">
@@ -77,35 +77,43 @@
                             {{producto_form.marca}}
                            
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 ">
                             {{producto_form.modelo.label}}
                            
                             {{producto_form.modelo}}
                             
                         </div>
-                        <div class="form-group col-6">
+                        <div class="form-group col-6 ">
                             {{producto_form.categoria.label}}
+                         
                             {{producto_form.categoria}}
-                            
+                           
                           
                            
                         </div>
                         <div class="form-group  col-6">
                             {{producto_form.imagen.label}}
+                            <br>
                             
                             {{producto_form.imagen}}
+                        </div>
+                        <div class="form-group col-6">
+                       
+                            
+                        <input type="submit" id="guardar" class="btn btn-info mt-2 " value="crear producto" >
+                  
+
                         </div>
                         
                     
                   
-                        <input type="submit" id="guardar" class="btn btn-info mt-2 btn-enviar" value="crear producto" >
-                  
                 </form>
-                
+               
             
             
     </div>
 </div>
+
     
     <footer class=" py-4 footer text-white ">
         <div class="container">

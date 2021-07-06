@@ -53,16 +53,10 @@ class ProductoForm(ModelForm):
                 }
 
             ),
-            'imagen':forms.FileInput(
-                 attrs={
-                    'class':'form-control',
-                    'id':'imagen',
-                    'name':'imagen'
-
-                }
+           
 
 
-            )
+            
 
 
         }
